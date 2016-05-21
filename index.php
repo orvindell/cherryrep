@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +7,9 @@
 	<meta name="application-name" content="Kosmos w pigułce">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Podróże w kosmos</title>
-	<link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
-  	<link rel="stylesheet" type="text/css" media="all" href="css/jquery.lightbox-0.5.css">
+	
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
-  	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
-  	<script type="text/javascript" src="js/jquery.lightbox-0.5.min.js"></script>	
+	
   	<link rel="stylesheet" type="text/css" href="FlorekStyle.css">
   	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> <!-- 33 KB -->
 
@@ -154,6 +150,7 @@
 <body>
 	<nav>
 		<ul class="main-nav">
+		<li><a href="index.php">Home</a></li>
 		<li><a href="mailto:tomasz.florek@student.po.edu.pl">E-mail me</a></li>
 		<li><a href="http://www.w3schools.com/html/">Visit HTML tutorial</a></li>
 		<li><a href="#">Blog</a>

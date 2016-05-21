@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Czas generowania: 21 Maj 2016, 19:48
+-- Czas generowania: 22 Maj 2016, 00:45
 -- Wersja serwera: 10.1.10-MariaDB
 -- Wersja PHP: 5.6.19
 
@@ -79,9 +79,17 @@ CREATE TABLE `kupione_dzialki` (
   `id` int(11) NOT NULL,
   `imie` text NOT NULL,
   `nazwisko` text NOT NULL,
+  `haslo` varchar(60) NOT NULL,
   `fk_id_dzialki` int(11) NOT NULL,
   `ilosc` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Zrzut danych tabeli `kupione_dzialki`
+--
+
+INSERT INTO `kupione_dzialki` (`id`, `imie`, `nazwisko`, `haslo`, `fk_id_dzialki`, `ilosc`) VALUES
+(1, 'Jan', 'Kowalski', 'ff12bbd8c907af067070211d87bdf098be17375b', 4, 100);
 
 -- --------------------------------------------------------
 
@@ -157,7 +165,7 @@ ALTER TABLE `kategorie_dzialek`
 -- AUTO_INCREMENT dla tabeli `kupione_dzialki`
 --
 ALTER TABLE `kupione_dzialki`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT dla tabeli `planety`
 --
