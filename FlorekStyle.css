@@ -1,0 +1,278 @@
+body {
+	min-width: 630px;
+}
+
+h1 {
+	color:red;
+}
+
+p {
+	color:blue;
+}
+
+h5 {
+    font-size: 50px;
+    display: inline;
+    position: relative;
+    letter-spacing: -5px; /* This will push it together giving us a nice 3D vibe */
+    color: rgba(0,0,255,0.5); /* This will give us a blue at 50% opacity */
+}
+
+h5:after {
+    content: 'Anaglyph';
+    position: absolute;
+    left: 8px; 
+    top: 6px; 
+    color: rgba(255,0,0,0.5); /* This gives us a red at 50% opacity */
+}
+
+body{
+    color: #ffffff;
+}
+
+header{
+	font-size: xx-large;
+	padding: 0.3em;
+	background: #207cca;
+}
+
+p{
+	font-size: large;
+}
+
+footer{
+	font-size: xx-large;
+	padding: 0.3em;
+	background: #207cca;
+}
+
+body {
+	background: #207cca;
+	margin: 0;
+	padding: 0;
+	font-family:Sans-serif;
+	line-height: 1.5em;
+	color:black;
+}
+
+ul {
+    list-style-image: url('sqpurple.gif');
+}
+
+#created-table {
+    width: 50px;
+    height: 80px;
+}
+
+#getFixed {
+  color: #c00;
+  font: bold 15px arial;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #c00;
+  width: 200px;
+}
+
+
+#container {
+	padding-left: 200px;
+	padding-right: 190px;
+}
+#container .column {
+	position: relative;
+	float: left;
+}
+
+#center {
+	padding: 10px 20px;
+	width: 100%;
+}
+#left {
+	width: 180px;
+	padding: 0 10px;
+	right: 240px;
+	margin-left: -100%;
+}
+#right {
+	width: 250px;
+	padding: 0 10px;
+	margin-right: -100%;
+}
+#footer {
+	clear: both;
+}
+
+#section {
+    background-color: rgba(255,255,255,0.1);
+    width:750px;
+    float:left;
+    padding:10px; 
+    text-align: left;
+}
+
+#footer {
+    background-color: rgba(255,255,255,0.2);
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px; 
+}
+
+#img70 {
+    max-width: 70%;
+    height: auto;
+    float: left;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+a:visited {
+    color: white;
+}
+a:hover {
+    color: red;
+}
+th {
+    text-transform: uppercase;
+    background-color: rgba(76, 175, 80, 0.5);
+}
+tr:nth-child(even) {
+    background-color: rgba(255,255,255,0.2)
+}
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+h1::first-letter { 
+    font-size: 150%;
+    font-family:monospace,monospace;
+}
+
+#kosmos div.background {
+    background: url(img/spacecat.jpg) repeat;
+    border: 2px solid black;
+}
+
+#kosmos div.transbox {
+    margin: 30px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+#kosmos div.transbox p {
+    margin: 5%;
+    font-weight: bold;
+    color: #000000;
+}
+
+#obrazek1 {
+    position: fixed;
+    top: 140px;
+    left: 1200px;
+    max-width: 100px;
+    height: auto;
+}
+#obrazek2 {
+    position: fixed;
+    top: 160px;
+    left: 1150px;
+    max-width: 100px;
+    height: auto;
+}
+#obrazek3 {
+    position: fixed;
+    top: 180px;
+    left: 1250px;
+    max-width: 100px;
+    height: auto;
+}
+
+
+/* css for <nav> */
+nav {
+    display: block;
+    margin: 0 0 1em;
+    padding: 0px;
+    float: left;
+    width: 100%;
+    background-color: #207CCA;
+    box-shadow: 8px 8px 20px #000000;
+}
+nav ul ul {
+    display: none;
+}
+nav ul li:hover > ul {
+    display: block;
+}
+nav ul {
+    padding: 0;
+    list-style: none;
+    position: relative;
+    display: inline-table;
+    z-index: 9999;
+    margin: 0px;
+    float: left;
+    width: 100%;
+}
+nav ul:after {
+    content: ""; 
+    clear: both; 
+    display: block;
+}
+nav ul li {
+    float: left;
+}
+nav ul li:hover a {
+    color: #FFFFFF;
+}
+nav ul li a {
+    display: block;
+    padding: 1em;
+    font-size: 1.125em;
+    color: #fff;
+    text-decoration: none;
+    margin: 0px;
+    background-color: #207cca;
+    border-right: 1px solid #1169ad;
+}
+nav ul li:last-of-type a {
+    border-right: 1px solid transparent !important;
+}
+nav ul ul {
+    background: #5f6975;
+    border-radius: 0px;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    width: auto;
+    float: none;
+}
+nav ul li:hover {
+    background: #5f6975;
+    color: #FFF;
+}
+nav ul ul li a:hover {
+    background-color: #1169ad;
+}
+nav ul ul li {
+    float: none;
+    border-bottom: 1px solid #1169ad;
+    position: relative;
+}
+nav ul ul li a {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    width:10em;
+    color: #fff;
+}   
+nav ul ul ul {
+    position: absolute; 
+    left: 100%; 
+    top:0;
+}
