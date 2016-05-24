@@ -150,7 +150,7 @@ require_once('/functions.php');
 				<input type="password" name="haslo" id="haslo" size="30" value="" required/>
 				</br>
 				</br>
-				<input id="submit" type="submit" name="submit" value="Anuluj kupno" />  
+				<input class="btn-class" id="submit" type="submit" name="submit" value="Anuluj kupno" />  
 			</form>
 			
 		</main>

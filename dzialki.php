@@ -104,9 +104,7 @@ require_once('/functions.php');
 			background: #fff;
 		}
 		
-		#main_table{
-			width:100%;
-		}
+		
 
 	
 	</style>
@@ -142,36 +140,72 @@ require_once('/functions.php');
 	<div id="container">
 		<main id="center" class="column">
 			<table id="main_table" border="1">
-					<tr>
-						<th>Planeta</th>
-						<th>Kategoria</th>
-						<th>Ilość dostępnych działek</th>
-					</tr>
-					<?php
-						$offers = get_offers($db);
-						foreach ($offers as $offer) {
-							echo 
-							'<tr>
-								<td>'.$offer["nazwa_planety"].'</td>
-								<td>'.$offer['nazwa_kategorii'].'</td>
-								<td>'.get_number_of_buyouts($db, $offer['id']).'/'.$offer['ilosc'].'</td>
-							</tr>';
-						}
-					?>
+				<tr>
+					<th>Planeta</th>
+					<th>Kategoria</th>
+					<th>Ilość dostępnych działek</th>
+				</tr>
+				<?php
+					$offers = get_offers($db);
+					foreach ($offers as $offer) {
+						echo 
+						'<tr>
+							<td>'.$offer["nazwa_planety"].'</td>
+							<td>'.$offer['nazwa_kategorii'].'</td>
+							<td>'.get_number_of_buyouts($db, $offer['id']).'/'.$offer['ilosc'].'</td>
+						</tr>';
+					}
+				?>
 	
-				</table>
+			</table>
 				
-				</br>
-				Zrób sobie z tego np bootstrapowe guziki:
-				</br>
-				<a href="buy_form.php">Kup działkę</a>
-				</br>
-				<a href="cancel_form.php">Anuluj kupno działki</a>
-				</br>
-				<a href="add_form.php" >Dodaj działki</a>	
+			</br>
 
+			<h2>Ceny działek:</h2>
+			<table border="1">
+				<tr>
+					<th>Nazwa</th>
+					<th>Cena</th>
+				</tr>
+				<?php
+					$categories = get_categories_prices($db);
+					foreach ($categories as $category) {
+						echo 
+						'<tr>
+							<td>'.$category["nazwa"].'</td>
+							<td>'.$category['cena'].'</td>						
+						</tr>';
+					}
+				?>
+			</table>
+			</br>
+			
+			<a href="buy_form.php" class="btn-class">Kup działkę</a>
+			<a href="cancel_form.php" class="btn-class">Anuluj kupno działki</a>
 
-			<hr>			
+			<hr>	
+
+			<h3>Statystyki:</h3>
+			Kupiono w sumie:<strong> <?php echo get_number_of_all_buyouts($db); ?> </strong>działek.
+			</br>
+			Planetą z największą liczbą działek jest 
+				<?php 
+					$planet = get_planet_with_most_plots($db); 
+					echo '<strong>'.$planet['nazwa'].'</strong>';
+					echo ' z liczbą działek <strong>'.$planet['suma'].'.</strong>';
+				
+				?>
+			</br>
+			Najwięcej luksusowych działek znajduje się na planecie
+				<?php 
+					$planet = get_planet_with_most_luxuty_plots($db); 
+					echo '<strong>'.$planet['nazwa'].'</strong>';
+					echo ' w liczbie <strong>'.$planet['suma'].'.</strong>';
+				
+				?>
+			</br>
+			Najpopularniejszym typem działki jest: <strong><?php echo get_most_popular_plot_type($db); ?></strong>
+			<hr>	
 		</main>
 	</div>
 

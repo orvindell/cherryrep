@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Czas generowania: 22 Maj 2016, 00:45
+-- Czas generowania: 24 Maj 2016, 18:25
 -- Wersja serwera: 10.1.10-MariaDB
 -- Wersja PHP: 5.6.19
 
@@ -89,7 +89,13 @@ CREATE TABLE `kupione_dzialki` (
 --
 
 INSERT INTO `kupione_dzialki` (`id`, `imie`, `nazwisko`, `haslo`, `fk_id_dzialki`, `ilosc`) VALUES
-(1, 'Jan', 'Kowalski', 'ff12bbd8c907af067070211d87bdf098be17375b', 4, 100);
+(1, 'Jan', 'Kowalski', 'ff12bbd8c907af067070211d87bdf098be17375b', 4, 100),
+(5, 'kek', 'kek', '5116c28e651a19013822c09e5c70c9fc425a66dc', 1, 215),
+(6, 'kek', 'kek', '5116c28e651a19013822c09e5c70c9fc425a66dc', 3, 1),
+(7, 'kek', 'kek', '5116c28e651a19013822c09e5c70c9fc425a66dc', 6, 21568),
+(8, 'kek', 'kek', '5116c28e651a19013822c09e5c70c9fc425a66dc', 7, 1563),
+(9, 'kek', 'kek', '5116c28e651a19013822c09e5c70c9fc425a66dc', 8, 654),
+(10, 'kek', 'kek', '5116c28e651a19013822c09e5c70c9fc425a66dc', 9, 10042);
 
 -- --------------------------------------------------------
 
@@ -165,7 +171,7 @@ ALTER TABLE `kategorie_dzialek`
 -- AUTO_INCREMENT dla tabeli `kupione_dzialki`
 --
 ALTER TABLE `kupione_dzialki`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT dla tabeli `planety`
 --

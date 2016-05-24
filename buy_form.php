@@ -110,6 +110,40 @@ require_once('/functions.php');
 
 	
 	</style>
+	
+	<script>
+		function getForm(str) {
+			if (str == "") {
+				document.getElementById("formDiv").innerHTML = "";
+				return;
+			} else {
+				if (window.XMLHttpRequest) {
+					// code for IE7+, Firefox, Chrome, Opera, Safari
+					xmlhttp = new XMLHttpRequest();
+				} else {
+					// code for IE6, IE5
+					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xmlhttp.onreadystatechange = function() {
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						document.getElementById("formDiv").innerHTML = xmlhttp.responseText;
+					}
+				};
+				xmlhttp.open("GET","buy_form_details.php?id="+str,true);
+				xmlhttp.send();
+			}
+		}
+
+		function printPrice()
+		{
+			var typ_dzialki = $("#categories_list option:selected").text();
+			
+			var prices = {"tania" : "2499.99", "standard" : "6412.50", "luksus" : "1475.00"};
+			
+			$("#cena").text("Cena jednostkowa: " + prices[typ_dzialki]);
+		}
+
+	</script>
 
 	
 </head>
@@ -141,7 +175,17 @@ require_once('/functions.php');
 
 	<div id="container">
 		<main id="center" class="column">
-			
+			Wybierz planetę:
+			<select name="planets" onchange="getForm(this.value)">
+				<option value="" selected="selected">Wybierz planetę:</option>
+				<?php
+					$planets = get_planet_names($db);
+					foreach ($planets as $planet) {
+						echo '<option value="'.$planet['id'].'">'.$planet['nazwa'].'</option>';
+					}
+				?>
+			</select>
+			<div id="formDiv"><b>Najpierw wybierz planetę...</b></div>
 		</main>
 	</div>
 
